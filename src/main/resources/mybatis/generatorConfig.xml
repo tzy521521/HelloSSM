@@ -3,8 +3,6 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "D:/IDEAProjects/HelloSSM/src/main/resources/mybatis/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <!--导入属性配置,为啥失效 -->
-    <properties resource="mybatis/generator.properties"></properties>
 
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
     <classPathEntry location="D:\Program Files\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar"/>

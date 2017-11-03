@@ -119,6 +119,22 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>env/dev</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <env>env/prod</env>
+            </properties>
+        </profile>
+
+    </profiles>
+
     <build>
         <finalName>HelloSSM</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
