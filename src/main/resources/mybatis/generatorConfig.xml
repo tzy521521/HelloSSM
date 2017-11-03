@@ -8,7 +8,6 @@
 
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
     <classPathEntry location="D:\Program Files\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar"/>
-
     <context id="default" targetRuntime="MyBatis3">
         <!-- optional，旨在创建class时，对注释进行控制 -->
         <commentGenerator>
@@ -28,40 +27,18 @@
             <property name="enableSubPackages" value="false"/>
             <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
             <property name="immutable" value="true"/>
-            <!-- 给Model添加一个父类 -->
-            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-
         <!--Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
-        <sqlMapGenerator targetPackage="com.zeusjava.kernel.mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="com.zeusjava.kernel.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
-
-        <javaClientGenerator targetPackage="com.zeusjava.kernel.mapper" targetProject="src/main/java" type="MIXEDMAPPER">
+        <javaClientGenerator targetPackage="com.zeusjava.kernel.dao" targetProject="src/main/java" type="MIXEDMAPPER">
             <property name="enableSubPackages" value=""/>
-            <!--
-                    定义Maper.java 源代码中的ByExample() 方法的可视性，可选的值有：
-                    public;
-                    private;
-                    protected;
-                    default
-                    注意：如果 targetRuntime="MyBatis3",此参数被忽略
-             -->
             <property name="exampleMethodVisibility" value=""/>
-            <!--
-                                           方法名计数器
-              Important note: this property is ignored if the target runtime is MyBatis3.
-             -->
             <property name="methodNameCalculator" value=""/>
-
-            <!--
-                                                为生成的接口添加父接口
-             -->
             <property name="rootInterface" value=""/>
-
         </javaClientGenerator>
-
         <table tableName="user"
                domainObjectName="User"
                enableCountByExample="false"

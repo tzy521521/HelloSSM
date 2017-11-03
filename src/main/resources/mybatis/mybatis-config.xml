@@ -25,4 +25,7 @@
     <typeAliases>
         <typeAlias alias="User" type="com.zeusjava.kernel.entity.User" />
     </typeAliases>
+    <mappers>
+        <package name="com.zeusjava.kernel.dao"/>
+    </mappers>
 </configuration>
